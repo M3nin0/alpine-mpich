@@ -15,7 +15,7 @@ COPY project/ .
 
 # Normal build command
 RUN mpicc -o mpi_c mpi_c.c
-RUN mpifort -o mpi_fortran mpi_fortran.c
+RUN mpifort -o mpi_fortran mpi_fortran.f90
 
 # ####################
 # For Docker beginner:
