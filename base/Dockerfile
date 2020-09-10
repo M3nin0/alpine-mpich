@@ -6,8 +6,8 @@ MAINTAINER Nikyle Nguyen <NLKNguyen@MSN.com>
 
 ARG REQUIRE="sudo build-base"
 RUN apk update && apk upgrade \
-      && apk add --no-cache ${REQUIRE}
-
+      && apk add --no-cache ${REQUIRE} \
+      && apk add --no-cache gfortran -y
 
 #### INSTALL MPICH ####
 # Source is available at http://www.mpich.org/static/downloads/
@@ -17,7 +17,7 @@ RUN apk update && apk upgrade \
 # Ex: http://www.mpich.org/static/downloads/3.2/mpich-3.2-installguide.pdf
 # These options are passed to the steps below
 ARG MPICH_VERSION="3.2"
-ARG MPICH_CONFIGURE_OPTIONS="--disable-fortran"
+ARG MPICH_CONFIGURE_OPTIONS
 ARG MPICH_MAKE_OPTIONS
 
 # Download, build, and install MPICH

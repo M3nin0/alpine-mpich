@@ -1,4 +1,4 @@
-FROM nlknguyen/alpine-mpich:onbuild
+FROM nlknguyen/alpine-mpich:onbuildfortran
 
 # # ------------------------------------------------------------
 # # Build MPI project
@@ -14,7 +14,8 @@ FROM nlknguyen/alpine-mpich:onbuild
 COPY project/ .
 
 # Normal build command
-RUN mpicc -o mpi_hello_world mpi_hello_world.c
+RUN mpicc -o mpi_c mpi_c.c
+RUN mpifort -o mpi_fortran mpi_fortran.c
 
 # ####################
 # For Docker beginner:

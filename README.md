@@ -53,9 +53,9 @@ $ git clone https://github.com/NLKNguyen/alpine-mpich
 
 $ cd alpine-mpich
 
-$ docker build -t nlknguyen/alpine-mpich base/
+$ docker build -t nlknguyen/alpine-mpich:fortran base/
 
-$ docker build -t nlknguyen/alpine-mpich:onbuild onbuild/
+$ docker build -t nlknguyen/alpine-mpich:onbuildfortran onbuild/
 ```
 
 Since the onbuild image inherits the base image, if you use a different tag name (`nlknguyen/alpine-mpich`), you must change the first line in `onbuild/Dockerfile` to inherits `FROM` your custom tag name.
